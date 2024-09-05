@@ -1,0 +1,492 @@
+<html><head><base href="https://neurolearn.edu/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<title>NeuroLearn - Adaptive Learning for Neurodiversity</title>
+<style>
+    body, html {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        color: #002C54;
+    }
+    .container-one {
+        width: 100%;
+        max-width: 1200px; /* Max width for content */
+        padding: 10px; /* Container padding */
+        background-color: #fff; /* White background for content */
+        margin: 0 auto; /* Center the container */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        border-radius: 8px; /* Rounded corners */
+    }
+    #home{
+        font-size: larger;
+    }
+    .section-one h1, .section h2 {
+            color: #002C54; /* Consistent blue color for headings */
+            margin-bottom: 10px; /* Margin below headings */
+        }
+
+        .section-one h1 {
+            font-size: 2em; /* Larger font size for main heading */
+            margin-top: 0; /* Remove top margin */
+        }
+
+        .section-one h2 {
+            font-size: 1.5em; /* Font size for subheadings */
+            margin-top: 20px; /* Margin above subheadings */
+        }
+    header {
+        background-color: #002C54;
+        color: white;
+        padding: 20px 0;
+    }
+    .logo {
+        color: #fff; /* White text color for the logo */
+        font-size: 1.8em; /* Larger font size for the logo */
+        font-weight: bold; /* Bold font for the logo */
+    }
+    nav {
+        display: flex;
+        justify-content: space-between; /* Space between logo, menu, and search */
+        align-items: center;
+        padding: 10px 20px; /* Padding for spacing */
+        max-width: 1200px; /* Max width for centered navbar */
+        margin: 0 auto; /* Center the navbar */
+    }
+    nav ul {
+        list-style: none; /* Remove default list styling */
+        display: flex; /* Display items in a row */
+        gap: 20px; /* Space between each menu item */
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li {
+        margin-right: 20px;
+    }
+    nav ul li a {
+        
+        color: white;
+        text-decoration: none;
+    }
+    nav ul li a {
+        
+        color: white;
+        text-decoration: none;
+    }
+    .forHover {
+            text-decoration: none; /* Remove underline */
+            color: #fff; /* White text color */
+            font-size: 1em; /* Regular font size */
+            padding: 8px 15px; /* Padding for better click area */
+            border-radius: 4px; /* Rounded corners */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+        }
+    .forHover:hover{
+        background-color: #005bb5; /* Darker blue on hover */
+        color: #f1f1f1; /* Slightly lighter text color on hover */
+    }
+    .search-icon {
+        cursor: pointer;
+        font-size: 1.3em; /* Slightly larger icon size */
+        cursor: pointer; /* Pointer cursor on hover */
+        color: #fff; /* White color for the search icon */
+        transition: color 0.3s; /* Smooth transition for hover */
+    }
+    .search-icon:hover {
+            color: #f1f1f1; /* Slightly lighter color on hover */
+        }
+    .login-form {
+        font-family: "Roboto", sans-serif;
+        max-width: 300px;
+        margin: 100px auto;
+    }
+    .login-form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .login-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #002C54;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .section {
+        margin-bottom: 40px;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #002C54;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .slideshow {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+    }
+    .slideshow img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .slideshow img.active {
+        opacity: 1;
+    }
+    .courses {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .course-card {
+        border: 1px solid #002C54;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    .course-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+    .learn-more {
+            background-color: #f9f9f9; /* Light background for the container */
+            padding: 20px; /* Padding around the content */
+            border-radius: 8px; /* Rounded corners */
+            max-width: 1200px; /* Maximum width for the container */
+            margin: 20px auto; /* Center align with margin */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        }
+
+        .learn-more h3 {
+            font-size: 1.5em; /* Slightly larger font size */
+            color: #002C54; /* Darker text color */
+            margin-bottom: 10px; /* Space below the heading */
+        }
+
+        .learn-more ul {
+            list-style-type: none; /* Remove default bullet points */
+            padding: 0; /* Remove padding */
+        }
+
+        .learn-more li {
+            margin: 8px 0; /* Space between list items */
+        }
+
+        .learn-more a {
+            text-decoration: none; /* Remove underline */
+            color: #002C54; /* Blue link color */
+            font-weight: bold; /* Bold text */
+            padding: 10px; /* Padding for better click area */
+            display: block; /* Make entire item clickable */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+            border-radius: 5px; /* Rounded corners for links */
+        }
+
+        .learn-more a:hover {
+            background-color: #002C54; /* Change background on hover */
+            color: #fff; /* Change text color on hover */
+        }
+        .section-last {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-last h2 {
+    text-align: center;
+    color: #002C54;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background-color: #f0f0f0;
+    color: #002C54;
+    padding: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.faq-question:hover {
+    background-color: #e6f2ff;
+}
+
+.faq-answer {
+    display: none; /* Hidden by default */
+    padding: 15px;
+    background-color: #f9f9f9;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: #002C54;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+.faq-item.active .faq-answer {
+    display: block; /* Show answer when active */
+}
+
+</style>
+</head>
+<body>
+
+<div id="login-page">
+    <div class="container">
+        <div class="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+</div>
+
+<div id="main-content" style="display: none;">
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">NeuroLearn</div>
+                <ul>
+                    <li><a class = "forHover" href="#home">Home</a></li>
+                    <li><a class = "forHover" href="#contact">Contact Us</a></li>
+                    <li><a class = "forHover" href="#faq">FAQ</a></li>
+                    <li><a class = "forHover" href="#about">About Us</a></li>
+                    <li><a class = "forHover" href="#profile">Your Profile</a></li>
+                    <li><a class = "forHover" href="#courses">Courses</a></li>
+                    <li><a class = "forHover" href="#progress">Your Progress</a></li>
+                </ul>
+                <div class="search-icon">🔍</div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-one">
+        <div id="home" class="section-one">
+            <h1>What is Neurodiversity?</h1>
+<p>Neurodiversity is a concept that recognizes and values the diversity of human brains and minds. It suggests that neurological differences, such as autism, ADHD, dyslexia, and other conditions, are natural variations of the human experience rather than disorders that need to be "fixed." Neurodiversity advocates for understanding and acceptance rather than labeling these differences as deficits.</p>
+
+<h2>Key Points about Neurodiversity</h2>
+<ul>
+    <li><strong>Definition:</strong> Neurodiversity is the idea that neurological differences are natural variations in the human genome. It emphasizes that these differences should be respected and recognized as part of human diversity.</li>
+    
+    <li><strong>Conditions Included:</strong> Neurodiversity often refers to conditions such as Autism Spectrum Disorder (ASD), Attention-Deficit/Hyperactivity Disorder (ADHD), Dyslexia, Dyspraxia, Dyscalculia, Tourette Syndrome, and others. People with these conditions may process information, communicate, and behave differently than neurotypical (non-neurodivergent) individuals.</li>
+    
+    <li><strong>Social Model of Disability:</strong> The neurodiversity movement is aligned with the social model of disability, which suggests that individuals are disabled not by their differences but by societal barriers and lack of accommodations. This model contrasts with the medical model, which focuses on "curing" or "fixing" these conditions.</li>
+    
+    <li><strong>Strengths-Based Approach:</strong> Neurodiversity promotes a strengths-based approach, recognizing the unique skills and perspectives neurodivergent individuals bring. For example, some autistic individuals may have exceptional attention to detail or an intense focus on specific interests.</li>
+    
+    <li><strong>Advocacy for Inclusion:</strong> Advocates for neurodiversity push for inclusive practices in education, workplaces, and society. This includes reasonable accommodations, like flexible work environments, alternative communication methods, and educational supports tailored to individual needs.</li>
+    
+    <li><strong>Challenging Stereotypes:</strong> Neurodiversity challenges stereotypes and stigmatization associated with neurological differences. It promotes understanding that these differences are not inherently negative but are part of human diversity.</li>
+</ul>
+
+<h2>Examples of Neurodiversity in Action</h2>
+<ul>
+    <li><strong>Autism Spectrum Disorder (ASD):</strong> Some autistic individuals have heightened pattern recognition abilities, making them excellent in fields such as data analysis, programming, or quality control. However, they may require a quieter work environment or clear communication styles to thrive.</li>
+    
+    <li><strong>Attention-Deficit/Hyperactivity Disorder (ADHD):</strong> Individuals with ADHD often display high levels of creativity, spontaneity, and problem-solving skills. They may excel in fast-paced environments that require multitasking and quick decision-making but might benefit from flexible deadlines or task management tools.</li>
+    
+    <li><strong>Dyslexia:</strong> People with dyslexia may struggle with reading or writing but often have strong visual thinking skills and may excel in areas like design, engineering, and entrepreneurship. They might need tools like text-to-speech software or more time to complete reading assignments.</li>
+    
+    <li><strong>Tourette Syndrome:</strong> Individuals with Tourette Syndrome may have involuntary tics but can develop strong resilience and adaptability skills due to navigating social settings and managing their tics. They may require understanding and accommodations to reduce stress and tic frequency.</li>
+    
+    <li><strong>Dyspraxia:</strong> People with dyspraxia often have difficulty with coordination and motor skills but may be highly creative and innovative thinkers. They may need extra support with tasks that require fine motor skills but can excel in conceptual or strategic roles.</li>
+</ul>
+
+
+        <div class="learn-more">
+            <h2>What is the most common type of neurodiversity?</h2>
+            <p>Among adults, dyslexia is the most common type of neurodivergent condition. Approximately 10% of adults are diagnosed with dyslexia.</p>
+            <p>Around 4-5% of the population has attention deficit hyperactivity disorder (ADHD).</p>
+            <p>A further 1-2% of people has an autism spectrum disorder (ASD). Together, those three syndromes constitute around 70 percent of all neurodevelopmental disorder diagnoses. Neurodivergent conditions include ADHD, dyslexia, dyspraxia, personality disorders, and bipolar disorder.</p>
+            <h3>Learn more about:</h3>
+            <ul>
+                <li><a href="https://my.clevelandclinic.org/health/diseases/4784-attention-deficithyperactivity-disorder-adhd">ADHD</a></li>
+                <li><a href="https://my.clevelandclinic.org/health/diseases/6005-dyslexia">Dyslexia</a></li>
+                <li><a href="https://my.clevelandclinic.org/health/diseases/8855-autism">Autism</a></li>
+                <li><a href="https://my.clevelandclinic.org/health/diseases/23294-dysgraphia">Dysgraphia</a></li>
+                <li><a href="https://my.clevelandclinic.org/health/diseases/23949-dyscalculia">Dyscalculia</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Celebrating the Beauty of Different Minds</h2>
+            <div class="slideshow">
+                <img src="https://images.unsplash.com/photo-1687360441027-27e70655b27e?q=80&w=1883&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Diverse group of people representing neurodiversity" width="800" height="500">
+                <img src="https://images.unsplash.com/photo-1655753115562-ef891068e958?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Brain illustration showing different neurological patterns" width="800" height="500">
+                <img src="https://images.unsplash.com/photo-1687360440922-b8e41c84ea99?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Children learning in an inclusive classroom environment" width="800" height="500">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Customize your platform according to your needs:</h2>
+            <a href="C:\Users\Azeem\Downloads\Diagonistic Questionnaire.html" class="button">Diagnostic Questionnaire</a>
+            <p>Or, if you or your guardian has information about the neurodivergency certified by a specialist you can directly go to our courses</p>
+            <a href="#courses" class="button">Go to Courses</a>
+        </div>
+
+        <div id="courses" class="section">
+            <h2>Courses</h2>
+            <div class="courses">
+                <div class="course-card">
+                    <img src="https://i.pinimg.com/1200x/7d/68/97/7d689703a342511a7fdaf48bfe6f5820.jpg" alt="Introduction to Neurodiversity" width="200" height="150">
+                    <h3>Introduction to Neurodiversity</h3>
+                    <p>Learn about the basics of neurodiversity and its impact on learning.</p>
+                </div>
+                <div class="course-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1663056011344-ae23eec8f2da?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="ADHD Strategies" width="200" height="150">
+                    <h3>ADHD Strategies</h3>
+                    <p>Discover effective learning techniques for individuals with ADHD.</p>
+                </div>
+                <div class="course-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1683141023264-491864b71ea9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dyslexia and Reading" width="200" height="150">
+                    <h3>Dyslexia and Reading</h3>
+                    <p>Explore methods to improve reading skills for dyslexic learners.</p>
+                </div>
+                <div class="course-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1661749512812-b79d26638121?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Autism and Social Skills" width="200" height="150">
+                    <h3>Autism and Social Skills</h3>
+                    <p>Develop social interaction skills for individuals on the autism spectrum.</p>
+                </div>
+                <div class="course-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1663091732944-4115577fccf1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Math for Dyscalculia" width="200" height="150">
+                    <h3>Math for Dyscalculia</h3>
+                    <p>Learn alternative approaches to mathematics for those with dyscalculia.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="about" class="section">
+            <h2>About Us</h2>
+            <p>NeuroLearn is dedicated to providing adaptive learning solutions for neurodiverse individuals. Our team of educators, psychologists, and technology experts work together to create personalized learning experiences that cater to the unique needs of each student.</p>
+            <p>Our mission is to make education accessible and enjoyable for everyone, regardless of their neurological differences. We believe that by embracing neurodiversity, we can unlock the full potential of every learner.</p>
+        </div>
+
+        <div class="section-last" id="faq">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-item">
+                <button class="faq-question">What is NeuroLearn?</button>
+                <div class="faq-answer">
+                    <p>NeuroLearn is a platform dedicated to understanding neurodiversity and providing resources for neurodivergent individuals, their families, and educators. We offer courses, articles, and tools to support learning and growth.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <button class="faq-question">How can I create an account?</button>
+                <div class="faq-answer">
+                    <p>To create an account, click on the "Sign Up" button at the top right corner of the homepage. Fill in your details, and you will receive a confirmation email to verify your account.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <button class="faq-question">What courses are available on NeuroLearn?</button>
+                <div class="faq-answer">
+                    <p>NeuroLearn offers a range of courses focusing on neurodiversity, including understanding autism, ADHD management strategies, dyslexia support, and more. Our courses are designed for individuals, educators, and parents to foster better understanding and inclusive practices.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <button class="faq-question">Is there a free trial for the courses?</button>
+                <div class="faq-answer">
+                    <p>Yes, NeuroLearn offers a 7-day free trial for all new users. You can access any course during the trial period to evaluate if it suits your needs.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <button class="faq-question">How can I track my learning progress?</button>
+                <div class="faq-answer">
+                    <p>You can track your learning progress through the "Your Progress" section on your profile page. It provides detailed analytics on course completion, quiz scores, and areas for improvement.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <button class="faq-question">How do I contact customer support?</button>
+                <div class="faq-answer">
+                    <p>You can contact our customer support team by clicking on the "Contact Us" link in the navigation menu or by emailing support@neurolearn.com. We are available 24/7 to assist you with any issues or questions.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    if (username && password) {
+        document.getElementById('login-page').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+    } else {
+        alert('Please enter both username and password.');
+    }
+}
+
+// Slideshow functionality
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slideshow img');
+
+function showSlides() {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].classList.add('active');
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+showSlides();
+
+// Navigation
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.display = 'none';
+        });
+        document.getElementById(targetId).style.display = 'block';
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        item.querySelector('.faq-question').addEventListener('click', function () {
+            item.classList.toggle('active');
+        });
+    });
+});
+
+});
+</script>
+
+</body></html>

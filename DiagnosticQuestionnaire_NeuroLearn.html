@@ -1,0 +1,204 @@
+<html><head><base href="https://neurolearn.org/assessment/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurodiversity Assessment Questionnaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        #submitBtn, #downloadBtn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        #submitBtn:hover, #downloadBtn:hover {
+            background-color: #2980b9;
+        }
+        #downloadBtn {
+            display: none;
+            background-color: #2ecc71;
+        }
+        #downloadBtn:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <h1>Neurodiversity Assessment Questionnaire</h1>
+    <p>This questionnaire is designed to help us understand your unique learning needs and tailor our educational approach accordingly. Please answer the following questions as accurately as possible. Your responses will remain confidential and will be used to enhance your learning experience.</p>
+
+    <form id="assessmentForm">
+        <div class="section">
+            <h2>Section 1: General Information</h2>
+            <div class="question">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="question">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="question">
+                <label for="grade">Grade/Class:</label>
+                <input type="text" id="grade" name="grade" required>
+            </div>
+            <div class="question">
+                <p>Primary User:</p>
+                <label><input type="radio" name="primaryUser" value="Student" required> Student</label>
+                <label><input type="radio" name="primaryUser" value="Parent/Guardian"> Parent/Guardian</label>
+                <label><input type="radio" name="primaryUser" value="Educator"> Educator</label>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Section 2: Attention Deficit Hyperactivity Disorder (ADHD)</h2>
+            <div class="question">
+                <p>Do you often find it difficult to sustain attention during tasks or play activities?</p>
+                <label><input type="radio" name="adhd1" value="Never" required> Never</label>
+                <label><input type="radio" name="adhd1" value="Rarely"> Rarely</label>
+                <label><input type="radio" name="adhd1" value="Sometimes"> Sometimes</label>
+                <label><input type="radio" name="adhd1" value="Often"> Often</label>
+                <label><input type="radio" name="adhd1" value="Very Often"> Very Often</label>
+            </div>
+            <!-- Add more ADHD questions here -->
+        </div>
+
+        <div class="section">
+            <h2>Section 3: Dyslexia</h2>
+            <div class="question">
+                <p>Do you find it hard to distinguish between similar-looking letters, like 'b' and 'd', or 'p' and 'q'?</p>
+                <label><input type="radio" name="dyslexia1" value="Never" required> Never</label>
+                <label><input type="radio" name="dyslexia1" value="Rarely"> Rarely</label>
+                <label><input type="radio" name="dyslexia1" value="Sometimes"> Sometimes</label>
+                <label><input type="radio" name="dyslexia1" value="Often"> Often</label>
+                <label><input type="radio" name="dyslexia1" value="Very Often"> Very Often</label>
+            </div>
+            <!-- Add more Dyslexia questions here -->
+        </div>
+
+        <div class="section">
+            <h2>Section 4: Autism Spectrum Disorder (ASD)</h2>
+            <div class="question">
+                <p>Do you prefer interacting with objects or engaging in solo activities rather than social interactions?</p>
+                <label><input type="radio" name="asd1" value="Never" required> Never</label>
+                <label><input type="radio" name="asd1" value="Rarely"> Rarely</label>
+                <label><input type="radio" name="asd1" value="Sometimes"> Sometimes</label>
+                <label><input type="radio" name="asd1" value="Often"> Often</label>
+                <label><input type="radio" name="asd1" value="Very Often"> Very Often</label>
+            </div>
+            <!-- Add more ASD questions here -->
+        </div>
+
+        <div class="section">
+            <h2>Section 5: Dysgraphia</h2>
+            <div class="question">
+                <p>Is writing by hand particularly tiring or physically uncomfortable for you?</p>
+                <label><input type="radio" name="dysgraphia1" value="Never" required> Never</label>
+                <label><input type="radio" name="dysgraphia1" value="Rarely"> Rarely</label>
+                <label><input type="radio" name="dysgraphia1" value="Sometimes"> Sometimes</label>
+                <label><input type="radio" name="dysgraphia1" value="Often"> Often</label>
+                <label><input type="radio" name="dysgraphia1" value="Very Often"> Very Often</label>
+            </div>
+            <!-- Add more Dysgraphia questions here -->
+        </div>
+
+        <div class="section">
+            <h2>Section 6: Dyscalculia</h2>
+            <div class="question">
+                <p>Do you often mix up mathematical symbols, such as + and - or x and ÷?</p>
+                <label><input type="radio" name="dyscalculia1" value="Never" required> Never</label>
+                <label><input type="radio" name="dyscalculia1" value="Rarely"> Rarely</label>
+                <label><input type="radio" name="dyscalculia1" value="Sometimes"> Sometimes</label>
+                <label><input type="radio" name="dyscalculia1" value="Often"> Often</label>
+                <label><input type="radio" name="dyscalculia1" value="Very Often"> Very Often</label>
+            </div>
+            <!-- Add more Dyscalculia questions here -->
+        </div>
+
+        <div class="section">
+            <h2>Section 7: Overlapping Conditions</h2>
+            <div class="question">
+                <p>Do you experience difficulties with both reading and writing?</p>
+                <label><input type="radio" name="overlap1" value="Yes" required> Yes</label>
+                <label><input type="radio" name="overlap1" value="No"> No</label>
+            </div>
+            <!-- Add more Overlapping Conditions questions here -->
+            <div class="question">
+                <p>Do you have any additional comments or concerns regarding your learning experience?</p>
+                <textarea name="additionalComments" rows="4"></textarea>
+            </div>
+        </div>
+
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+
+    <button id="downloadBtn">Download Responses (CSV)</button>
+
+    <script>
+        const form = document.getElementById('assessmentForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        let responses = {};
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            responses = Object.fromEntries(formData);
+            console.log('Form submitted:', responses);
+            submitBtn.style.display = 'none';
+            downloadBtn.style.display = 'inline-block';
+        });
+
+        downloadBtn.addEventListener('click', function() {
+            const csvContent = Object.entries(responses).map(([key, value]) => `${key},${value}`).join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            if (link.download !== undefined) {
+                const url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", "neurodiversity_assessment_responses.csv");
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+    </script>
+</body>
+</html>
